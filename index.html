@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grad Connect Portal</title>
+  <meta name="description" content="Grad Connect – Alumni Network Portal" />
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      overflow: hidden;
+      background: #f9f9f9;
+    }
+    iframe {
+      border: none;
+      width: 100%;
+      height: 100%;
+    }
+    .fallback {
+      display: none;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <iframe 
+      src="https://grad-connect-5.emergent.host/" 
+      id="gradConnectFrame"
+      allowfullscreen>
+  </iframe>
+
+  <div class="fallback" id="fallback">
+    <h2>Redirecting to Grad Connect...</h2>
+    <p>If it doesn’t load, <a href="https://grad-connect-5.emergent.host/">click here</a>.</p>
+  </div>
+
+  <script>
+    const frame = document.getElementById("gradConnectFrame");
+    frame.addEventListener("error", () => {
+      document.getElementById("fallback").style.display = "block";
+    });
+  </script>
+</body>
+</html>
